@@ -1,0 +1,75 @@
+season,name,pos,height,weight,dob,country,exp,college
+2018,OG Anunoby,SF,6-7,232,"July 17, 1997",gb,R,Indiana
+2018,Lorenzo Brown,PG,6-5,189,"August 26, 1990",us,3,NC State
+2018,Bruno Caboclo,SF,6-9,218,"September 21, 1995",br,3,
+2018,DeMar DeRozan,SG,6-6,220,"August 7, 1989",us,8,USC
+2018,Nigel Hayes,SF,6-8,254,"December 16, 1994",us,R,Wisconsin
+2018,Serge Ibaka,PF,6-10,235,"September 18, 1989",cg,8,
+2018,Kyle Lowry,PG,6-0,196,"March 25, 1986",us,11,Villanova
+2018,Alfonzo McKinnie,SF,6-7,215,"September 17, 1992",us,R,Green Bay
+2018,C.J. Miles,SF,6-6,220,"March 18, 1987",us,12,
+2018,Malcolm Miller,SF,6-7,210,"March 6, 1993",us,R,Holy Cross
+2018,Lucas Nogueira,C,7-0,241,"July 26, 1992",br,3,
+2018,Jakob Poeltl,C,7-1,245,"October 15, 1995",at,1,Utah
+2018,Norman Powell,SG,6-3,215,"May 25, 1993",us,2,UCLA
+2018,Malachi Richardson,SG,6-6,205,"January 5, 1996",us,1,Syracuse
+2018,Pascal Siakam,PF,6-9,230,"April 2, 1994",cm,1,New Mexico State
+2018,Jonas Valančiūnas,C,6-11,265,"May 6, 1992",lt,5,
+2018,Fred VanVleet,PG,6-1,197,"February 25, 1994",us,1,Wichita State
+2018,Delon Wright,PG,6-5,185,"April 26, 1992",us,2,Utah
+2019,OG Anunoby,SF,6-7,232,"July 17, 1997",gb,1,Indiana
+2019,Chris Boucher,PF,6-9,200,"January 11, 1993",lc,1,Oregon
+2019,Lorenzo Brown,PG,6-5,189,"August 26, 1990",us,4,NC State
+2019,Marc Gasol,C,6-11,255,"January 29, 1985",es,10,
+2019,Danny Green,SG,6-6,215,"June 22, 1987",us,9,UNC
+2019,Serge Ibaka,C,6-10,235,"September 18, 1989",cg,9,
+2019,Kawhi Leonard,SF,6-7,225,"June 29, 1991",us,7,San Diego State
+2019,Jeremy Lin,PG,6-3,200,"August 23, 1988",us,8,Harvard University
+2019,Kyle Lowry,PG,6-0,196,"March 25, 1986",us,12,Villanova
+2019,Jordan Loyd,PG,6-4,210,"July 27, 1993",us,R,"Furman University, University of Indianapolis"
+2019,Patrick McCaw,SG,6-7,181,"October 25, 1995",us,2,UNLV
+2019,Jodie Meeks,SG,6-4,210,"August 21, 1987",us,9,Kentucky
+2019,C.J. Miles,SF,6-6,220,"March 18, 1987",us,13,
+2019,Malcolm Miller,SF,6-7,210,"March 6, 1993",us,1,Holy Cross
+2019,Greg Monroe,C,6-11,265,"June 4, 1990",us,8,Georgetown
+2019,Eric Moreland,PF,6-10,238,"December 24, 1991",us,3,Oregon State
+2019,Norman Powell,SG,6-3,215,"May 25, 1993",us,3,UCLA
+2019,Malachi Richardson,SG,6-6,205,"January 5, 1996",us,2,Syracuse
+2019,Pascal Siakam,PF,6-9,230,"April 2, 1994",cm,2,New Mexico State
+2019,Jonas Valančiūnas,C,6-11,265,"May 6, 1992",lt,6,
+2019,Fred VanVleet,PG,6-1,197,"February 25, 1994",us,2,Wichita State
+2019,Delon Wright,PG,6-5,185,"April 26, 1992",us,3,Utah
+2020,OG Anunoby,SF,6-7,232,"July 17, 1997",gb,2,Indiana
+2020,Chris Boucher,C,6-9,200,"January 11, 1993",lc,2,Oregon
+2020,Oshae Brissett,SF,6-7,210,"June 20, 1998",ca,R,Syracuse
+2020,Terence Davis,SG,6-4,201,"May 16, 1997",us,R,Ole Miss
+2020,Marc Gasol,C,6-11,255,"January 29, 1985",es,11,
+2020,Dewan Hernandez,C,6-10,235,"December 9, 1996",us,R,Miami (FL)
+2020,Rondae Hollis-Jefferson,PF,6-6,217,"January 3, 1995",us,4,Arizona
+2020,Serge Ibaka,C,6-10,235,"September 18, 1989",cg,10,
+2020,Stanley Johnson,PF,6-6,242,"May 29, 1996",us,4,Arizona
+2020,Kyle Lowry,PG,6-0,196,"March 25, 1986",us,13,Villanova
+2020,Patrick McCaw,SF,6-7,181,"October 25, 1995",us,3,UNLV
+2020,Malcolm Miller,SF,6-7,210,"March 6, 1993",us,2,Holy Cross
+2020,Shamorie Ponds,PG,6-0,180,"June 29, 1998",us,R,St. John's
+2020,Norman Powell,SG,6-3,215,"May 25, 1993",us,4,UCLA
+2020,Pascal Siakam,PF,6-9,230,"April 2, 1994",cm,3,New Mexico State
+2020,Matt Thomas,SG,6-4,190,"August 4, 1994",us,R,Iowa State
+2020,Fred VanVleet,SG,6-1,197,"February 25, 1994",us,3,Wichita State
+2020,Paul Watson,SF,6-6,210,"December 30, 1994",us,R,Fresno State
+2021,Fred VanVleet,SG,6-1,197,"February 25, 1994",us,4,Wichita State
+2021,Chris Boucher,C,6-9,200,"January 11, 1993",lc,3,Oregon
+2021,Norman Powell,SG,6-3,215,"May 25, 1993",us,5,UCLA
+2021,Pascal Siakam,PF,6-9,230,"April 2, 1994",cm,4,New Mexico State
+2021,Aron Baynes,C,6-10,260,"December 9, 1986",nz,8,Washington State
+2021,Stanley Johnson,PF,6-6,242,"May 29, 1996",us,5,Arizona
+2021,Terence Davis,SG,6-4,201,"May 16, 1997",us,1,Ole Miss
+2021,Kyle Lowry,PG,6-0,196,"March 25, 1986",us,14,Villanova
+2021,DeAndre' Bembry,SF,6-5,210,"July 4, 1994",us,4,Saint Joseph's
+2021,OG Anunoby,SF,6-7,232,"July 17, 1997",gb,3,Indiana
+2021,Yuta Watanabe  (TW),SF,6-9,215,"October 13, 1994",jp,2,George Washington
+2021,Matt Thomas,SG,6-4,190,"August 4, 1994",us,1,Iowa State
+2021,Malachi Flynn,PG,6-1,175,"May 10, 1998",us,R,"Washington State, San Diego State"
+2021,Paul Watson,SF,6-6,210,"December 30, 1994",us,1,Fresno State
+2021,Jalen Harris  (TW),SG,6-5,195,"August 14, 1998",us,R,"Nevada, Louisiana Tech"
+2021,Patrick McCaw,SF,6-7,181,"October 25, 1995",us,4,UNLV
