@@ -1,0 +1,72 @@
+season,name,pos,height,weight,dob,country,exp,college
+2018,Kadeem Allen,PG,6-1,200,"January 15, 1993",us,R,Arizona
+2018,Aron Baynes,C,6-10,260,"December 9, 1986",nz,5,Washington State
+2018,Jabari Bird,SG,6-6,198,"July 3, 1994",us,R,California
+2018,Jaylen Brown,SG,6-6,223,"October 24, 1996",us,1,California
+2018,Jarell Eddie,SF,6-7,218,"October 30, 1991",us,2,Virginia Tech
+2018,Jonathan Gibson,PG,6-2,185,"November 8, 1987",us,1,New Mexico State
+2018,Gordon Hayward,SF,6-7,225,"March 23, 1990",us,7,Butler
+2018,Al Horford,C,6-9,240,"June 3, 1986",do,10,Florida
+2018,Kyrie Irving,PG,6-2,195,"March 23, 1992",au,6,Duke
+2018,Shane Larkin,PG,5-11,175,"October 2, 1992",us,3,Miami (FL)
+2018,Greg Monroe,C,6-11,265,"June 4, 1990",us,7,Georgetown
+2018,Marcus Morris,PF,6-8,218,"September 2, 1989",us,6,Kansas
+2018,Abdel Nader,SF,6-5,225,"September 25, 1993",eg,R,"Northern Illinois, Iowa State"
+2018,Semi Ojeleye,PF,6-6,240,"December 5, 1994",us,R,"Duke, SMU"
+2018,Terry Rozier,PG,6-1,190,"March 17, 1994",us,2,Louisville
+2018,Xavier Silas,SG,6-5,205,"January 22, 1988",us,1,"Colorado, Northern Illinois"
+2018,Marcus Smart,SG,6-3,220,"March 6, 1994",us,3,Oklahoma State
+2018,Jayson Tatum,SF,6-8,210,"March 3, 1998",us,R,Duke
+2018,Daniel Theis,C,6-8,245,"April 4, 1992",de,R,
+2018,Guerschon Yabusele,PF,6-8,260,"December 17, 1995",fr,R,
+2019,Aron Baynes,C,6-10,260,"December 9, 1986",nz,6,Washington State
+2019,Jaylen Brown,SG,6-6,223,"October 24, 1996",us,2,California
+2019,PJ Dozier,SG,6-6,205,"October 25, 1996",us,1,South Carolina
+2019,Gordon Hayward,PF,6-7,225,"March 23, 1990",us,8,Butler
+2019,Al Horford,C,6-9,240,"June 3, 1986",do,11,Florida
+2019,R.J. Hunter,SG,6-5,185,"October 24, 1993",us,3,Georgia State University
+2019,Kyrie Irving,PG,6-2,195,"March 23, 1992",au,7,Duke
+2019,Greg Monroe,C,6-11,265,"June 4, 1990",us,8,Georgetown
+2019,Marcus Morris,PF,6-8,218,"September 2, 1989",us,7,Kansas
+2019,Semi Ojeleye,PF,6-6,240,"December 5, 1994",us,1,"Duke, SMU"
+2019,Terry Rozier,PG,6-1,190,"March 17, 1994",us,3,Louisville
+2019,Marcus Smart,SG,6-3,220,"March 6, 1994",us,4,Oklahoma State
+2019,Jayson Tatum,SF,6-8,210,"March 3, 1998",us,1,Duke
+2019,Daniel Theis,C,6-8,245,"April 4, 1992",de,1,
+2019,Brad Wanamaker,PG,6-3,210,"July 25, 1989",us,R,Pitt
+2019,Robert Williams,C,6-8,237,"October 17, 1997",us,R,Texas A&M
+2019,Guerschon Yabusele,PF,6-8,260,"December 17, 1995",fr,1,
+2020,Jaylen Brown,SG,6-6,223,"October 24, 1996",us,3,California
+2020,Carsen Edwards,SG,5-11,200,"March 12, 1998",us,R,Purdue
+2020,Tacko Fall,C,7-5,311,"December 10, 1995",sn,R,Central Florida
+2020,Javonte Green,SG,6-4,205,"July 23, 1993",us,R,Radford
+2020,Gordon Hayward,SF,6-7,225,"March 23, 1990",us,9,Butler
+2020,Enes Kanter,C,6-10,250,"May 20, 1992",ch,8,
+2020,Romeo Langford,SG,6-4,216,"October 25, 1999",us,R,Indiana
+2020,Semi Ojeleye,PF,6-6,240,"December 5, 1994",us,2,"Duke, SMU"
+2020,Vincent Poirier,C,7-0,235,"October 17, 1993",fr,R,
+2020,Marcus Smart,SG,6-3,220,"March 6, 1994",us,5,Oklahoma State
+2020,Jayson Tatum,PF,6-8,210,"March 3, 1998",us,2,Duke
+2020,Daniel Theis,C,6-8,245,"April 4, 1992",de,2,
+2020,Kemba Walker,PG,6-0,184,"May 8, 1990",us,8,UConn
+2020,Brad Wanamaker,PG,6-3,210,"July 25, 1989",us,1,Pitt
+2020,Tremont Waters,PG,5-10,175,"January 10, 1998",us,R,LSU
+2020,Grant Williams,PF,6-6,236,"November 30, 1998",us,R,Tennessee
+2020,Robert Williams,C,6-8,237,"October 17, 1997",us,1,Texas A&M
+2021,Semi Ojeleye,PF,6-6,240,"December 5, 1994",us,3,"Duke, SMU"
+2021,Jaylen Brown,SG,6-6,223,"October 24, 1996",us,4,California
+2021,Daniel Theis,C,6-8,245,"April 4, 1992",de,3,
+2021,Tristan Thompson,PF,6-9,254,"March 13, 1991",ca,9,Texas
+2021,Jayson Tatum,SF,6-8,210,"March 3, 1998",us,3,Duke
+2021,Payton Pritchard,SG,6-1,195,"January 28, 1998",us,R,Oregon
+2021,Grant Williams,PF,6-6,236,"November 30, 1998",us,1,Tennessee
+2021,Robert Williams,C,6-8,237,"October 17, 1997",us,2,Texas A&M
+2021,Jeff Teague,PG,6-3,195,"June 10, 1988",us,11,Wake Forest
+2021,Javonte Green,SG,6-4,205,"July 23, 1993",us,1,Radford
+2021,Marcus Smart,PG,6-3,220,"March 6, 1994",us,6,Oklahoma State
+2021,Aaron Nesmith,SF,6-5,215,"October 16, 1999",us,R,Vanderbilt
+2021,Kemba Walker,PG,6-0,184,"May 8, 1990",us,9,UConn
+2021,Carsen Edwards,SG,5-11,200,"March 12, 1998",us,1,Purdue
+2021,Tremont Waters  (TW),PG,5-10,175,"January 10, 1998",us,1,LSU
+2021,Tacko Fall  (TW),C,7-5,311,"December 10, 1995",sn,1,Central Florida
+2021,Romeo Langford,SG,6-4,216,"October 25, 1999",us,1,Indiana

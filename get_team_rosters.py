@@ -5,7 +5,7 @@ import time
 
 # Input parameters
 nba_seasons = ['2018', '2019', '2020', '2021']
-nba_teams = ['TOR']
+nba_teams = ['BOS']
 
 
 def get_urls(teams, seasons):
@@ -48,7 +48,7 @@ def export_data(rosters):
     df = pd.DataFrame(rosters)
     df.columns = ['season', 'name', 'pos', 'height', 'weight', 'dob', 'country', 'exp', 'college']
 
-    df.to_csv('toronto_rosters.csv', index=False)
+    df.to_csv('rosters.csv', index=False)
 
 
 def scrape_rosters():
@@ -59,7 +59,7 @@ def scrape_rosters():
     roster_data = get_roster_info(roster_urls)
 
     export_data(roster_data)
-    print('Finished exporting roster information for {} team(s) over {} seasons.'.format(len(nba_teams),
+    print('Finished exporting roster information for {} team(s) over {} season(s).'.format(len(nba_teams),
                                                                                          len(nba_seasons)))
 
 
