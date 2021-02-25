@@ -1,15 +1,15 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
-from datetime import datetime
 import time
 
-"""Input parameters"""
+# Input parameters
 nba_seasons = ['2018', '2019', '2020', '2021']
 nba_teams = ['TOR']
 
 
 def get_urls(teams, seasons):
+    """Collects the roster urls for specified teams and seasons."""
 
     urls = []
     for team in teams:
@@ -21,6 +21,7 @@ def get_urls(teams, seasons):
 
 
 def get_roster_info(urls):
+    """Collects roster information for specified teams and seasons """
 
     rosters = []
     for url in urls:
@@ -42,6 +43,8 @@ def get_roster_info(urls):
 
 
 def export_data(rosters):
+    """Exports unaltered roster data to a csv file."""
+
     df = pd.DataFrame(rosters)
     df.columns = ['season', 'name', 'pos', 'height', 'weight', 'dob', 'country', 'exp', 'college']
 
@@ -49,13 +52,15 @@ def export_data(rosters):
 
 
 def scrape_rosters():
-    start = datetime.now()
+    """Calls various functions to perform roster scraping."""
 
+    print('Collecting roster information...')
     roster_urls = get_urls(nba_teams, nba_seasons)
-
     roster_data = get_roster_info(roster_urls)
 
     export_data(roster_data)
+    print('Finished exporting roster information for {} team(s) over {} seasons.'.format(len(nba_teams),
+                                                                                         len(nba_seasons)))
 
 
 if __name__ == '__main__':
