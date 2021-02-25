@@ -60,7 +60,7 @@ def scrape_rosters():
 
     export_data(roster_data)
     print('Finished exporting roster information for {} team(s) over {} season(s).'.format(len(nba_teams),
-                                                                                         len(nba_seasons)))
+                                                                                           len(nba_seasons)))
 
 
 if __name__ == '__main__':
