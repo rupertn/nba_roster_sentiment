@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/raptor_player_turnover.iml" filepath="$PROJECT_DIR$/.idea/raptor_player_turnover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../nba_roster_turnover/.idea/nba_roster_turnover.iml" filepath="$PROJECT_DIR$/../nba_roster_turnover/.idea/nba_roster_turnover.iml" />
     </modules>
   </component>
 </project>

@@ -45,7 +45,7 @@ def export_data(rosters):
     df = pd.DataFrame(rosters)
     df.columns = ['season', 'name', 'pos', 'height', 'weight', 'dob', 'country', 'exp', 'college']
 
-    df.to_csv('raptors_rosters.csv', index=False)
+    df.to_csv('toronto_rosters.csv', index=False)
 
 
 def scrape_rosters():
