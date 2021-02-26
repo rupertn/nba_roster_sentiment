@@ -1,31 +1,33 @@
 import praw
 import pandas as pd
+from datetime import datetime
+
+team_subs = ['lakers']
+
+df = pd.read_csv('nba_teams.csv')
+df = df[~df['team_name'].isin(team_subs)]
+nba_teams = df['team_name'].to_list()
 
 reddit = praw.Reddit(
-    client_id="my client id",
-    client_secret="my client secret",
-    user_agent="my user agent",
-    username="rupertn28",
-    password="my password"
+    client_id="",
+    client_secret="",
+    user_agent="",
+    username="",
+    password=""
 )
 
-# Input parameters
-months = ['jan', 'january', 'feb', 'february', 'mar', 'march', 'apr', 'april', 'may', 'jun', 'june', 'oct', 'october',
-          'nov', 'november', 'dec', 'december']
-years = ['2017', '2018', '2019', '2020', '2021']
-nba_subs = ['bostonceltics']
 
-
-def get_search_query(m, yr):
-    return 'title:game thread {} {}'.format(m, yr)
+def get_search_query(opponent):
+    return 'title:post game thread {}'.format(opponent)
 
 
 def create_post_dict():
     submission_dict = {
         'title': [],
+        'id': [],
         'score': [],
         'num_comms': [],
-        'created': [],
+        'created': []
     }
 
     return submission_dict
@@ -33,7 +35,7 @@ def create_post_dict():
 
 def create_comment_dict():
     comm_dict = {
-        'post_title': [],
+        'post_id': [],
         'comment_id': [],
         'comment_body': [],
         'comment_score': []
@@ -44,41 +46,45 @@ def create_comment_dict():
 
 def get_submission_details(post):
     post_dict['title'].append(post.title)
+    post_dict['id'].append(post.id)
     post_dict['score'].append(post.score)
     post_dict['num_comms'].append(post.num_comments)
     post_dict['created'].append(post.created_utc)
 
 
 def get_comment_details(post, comm):
-    comments_dict['post_title'].append(post.title)
+    comments_dict['post_id'].append(post.id)
     comments_dict['comment_id'].append(comm.id)
     comments_dict['comment_body'].append(comm.body)
     comments_dict['comment_score'].append(comm.score)
 
 
-def export_data(team, posts, comments):
+def export_data(franchise, posts, comments):
     posts_df = pd.DataFrame(posts)
     comments_df = pd.DataFrame(comments)
 
-    posts_df.to_csv('{}_game_posts.csv'.format(team), index=False)
-    comments_df.to_csv('{}_game_comments.csv'.format(team), index=False)
+    posts_df.to_csv('{}_game_posts.csv'.format(franchise), index=False)
+    comments_df.to_csv('{}_game_comments.csv'.format(franchise), index=False)
 
 
-for sub in nba_subs:
+for sub in team_subs:
     team_sub = reddit.subreddit(sub)
 
     post_dict = create_post_dict()
     comments_dict = create_comment_dict()
 
-    for year in years:
-        for month in months:
-            query = get_search_query(month, year)
+    for team in nba_teams:
+        start = datetime.now()
+        query = get_search_query(team)
 
-            for submission in team_sub.search(query, sort='new', limit=None):
-                get_submission_details(submission)
+        for submission in team_sub.search(query, sort='new', limit=None):
+            get_submission_details(submission)
 
-                submission.comments.replace_more(limit=None)
-                for comment in submission.comments.list():
-                    get_comment_details(submission, comment)
+            submission.comments.replace_more(limit=0)
+            for comment in submission.comments.list():
+                get_comment_details(submission, comment)
+
+        print('Completed comment collection for {}-{} games in {}'.format(sub, team, datetime.now()-start))
 
     export_data(sub, post_dict, comments_dict)
+    print('Finished exporting reddit comments!')
