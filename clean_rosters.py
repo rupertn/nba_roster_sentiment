@@ -7,6 +7,8 @@ df = rosters.copy()
 df.loc[df['name'] == 'Devontae Cacok\xa0\xa0(TW)', 'name'] = 'Devontae Cacok'
 df.loc[df['name'] == 'Kostas Antetokounmpo\xa0\xa0(TW)', 'name'] = 'Kostas Antetokounmpo'
 
+df[['first_name', 'last_name']] = df['name'].str.split(expand=True)
+
 df['season_player'] = [list(a) for a in (zip(df.season, df.name))]
 player_list = df['season_player'].to_list()
 
