@@ -5,7 +5,7 @@ import time
 
 # Input parameters
 nba_seasons = ['2018', '2019', '2020', '2021']
-nba_teams = ['BOS']
+nba_teams = ['LAL']
 
 
 def get_urls(teams, seasons):
