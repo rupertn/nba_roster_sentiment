@@ -9,6 +9,14 @@ df.loc[df['name'] == 'Kostas Antetokounmpo\xa0\xa0(TW)', 'name'] = 'Kostas Antet
 
 df[['first_name', 'last_name']] = df['name'].str.split(expand=True)
 
+
+def get_initials(name):
+    words = name.replace('-', ' ').split()
+    return ''.join([word[0] for word in words])
+
+
+df['initials'] = df['name'].apply(lambda x: get_initials(x))
+
 df['season_player'] = [list(a) for a in (zip(df.season, df.name))]
 player_list = df['season_player'].to_list()
 
@@ -24,10 +32,20 @@ def player_returned(p_list, season_player):
 
 df['returned'] = df.apply(lambda row: player_returned(player_list, row['season_player']), axis=1)
 
+nickname_dict = dict(zip(df.initials.str.lower(), df.name.str.lower()))
+
+nickname_dict['kuz'] = 'kyle kuzma'
+nickname_dict['bron'] = 'lebron james'
+nickname_dict['lbj'] = 'lebron james'
+
+del nickname_dict['am']
+del nickname_dict['it']
+del nickname_dict['jr']
+
 df['season'] = df['season'].astype(str)
 
 roster_train = df[df['season'] != '2021']
 roster_test = df[df['season'] == '2021']
 
-roster_train.to_csv('roster_train.csv', index=False)
-roster_test.to_csv('roster_test.csv', index=False)
+# roster_train.to_csv('roster_train.csv', index=False)
+# roster_test.to_csv('roster_test.csv', index=False)
