@@ -37,15 +37,22 @@ nickname_dict = dict(zip(df.initials.str.lower(), df.name.str.lower()))
 nickname_dict['kuz'] = 'kyle kuzma'
 nickname_dict['bron'] = 'lebron james'
 nickname_dict['lbj'] = 'lebron james'
+nickname_dict['zu'] = 'ivica zubac'
+nickname_dict['zo'] = 'lonzo ball'
+nickname_dict['jr'] = 'j.r. smith'
+nickname_dict['wes'] = 'wesley matthews'
+nickname_dict['kief'] = 'markieff morris'
 
 del nickname_dict['am']
 del nickname_dict['it']
-del nickname_dict['jr']
+del nickname_dict['js']
 
 df['season'] = df['season'].astype(str)
 
 roster_train = df[df['season'] != '2021']
 roster_test = df[df['season'] == '2021']
+
+len(df['name'].unique())
 
 # roster_train.to_csv('roster_train.csv', index=False)
 # roster_test.to_csv('roster_test.csv', index=False)
