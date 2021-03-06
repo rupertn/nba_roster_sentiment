@@ -32,4 +32,4 @@ def get_season(season_dict, post_date):
 
 df['season'] = df['created'].apply(lambda x: get_season(season_dates, x))
 
-df.to_csv('game_posts_clean.csv', index=False)
+# df.to_csv('game_posts_clean.csv', index=False)
