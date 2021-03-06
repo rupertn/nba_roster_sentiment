@@ -3,8 +3,13 @@ import numpy as np
 import re
 import string
 from clean_rosters import nickname_dict
-import nltk
+from comment_slang import slang_dict
+from contractions import contr_dict
 from nltk.corpus import stopwords
+
+
+def make_lowercase(comm):
+    return comm.lower()
 
 
 def remove_links(comm):
@@ -15,8 +20,17 @@ def remove_numbers(comm):
     return re.sub(r'\d+', '', comm)
 
 
+def expand_contractions(cont_dict, comm):
+    for word in comm.split():
+        if word in cont_dict.keys():
+            name_regex = r'\b{}\b'.format(word)
+            comm = re.sub(name_regex, cont_dict[word], comm)
+
+    return comm
+
+
 def remove_punctuation(comm):
-    return ''.join([char.lower() for char in comm if char not in string.punctuation + '‘’”“'])
+    return ''.join([char for char in comm if char not in string.punctuation + '‘’”“'])
 
 
 def remove_whitespace(comm):
@@ -40,10 +54,12 @@ def remove_abbreviations(abb_dict, name_dict, comm):
     return comm
 
 
-def clean_comment(stop_words, abb_dict, name_dict, comm):
+def clean_comment(stop_words, cont_dict, abb_dict, name_dict, comm):
 
+    comm = make_lowercase(comm)
     comm = remove_links(comm)
     comm = remove_numbers(comm)
+    comm = expand_contractions(cont_dict, comm)
     comm = remove_punctuation(comm)
     comm = remove_whitespace(comm)
     comm = remove_abbreviations(abb_dict, name_dict, comm)
@@ -64,29 +80,12 @@ df = df.dropna(subset=['comment_body'])
 
 stopwords = stopwords.words('english')
 
-abbr_dict = {
-    'smh': 'shake my head',
-    'tbh': 'to be honest',
-    'goat': 'greatest of all time',
-    'lol': 'laugh out loud',
-    'lmao': 'laugh my ass off',
-    'lmfao': 'laugh my fucking ass off',
-    'idk': 'i dont know',
-    'mvp': 'most valuable player',
-    'fmvp': 'finals most valuable player',
-    'goated': 'greatest of all time',
-    'nah': 'no way',
-    'kinda': 'kind of',
-    'ngl': 'not going to lie',
-    'ass': 'bad',
-    'plz': 'please',
-    'fts': 'free throws',
-    'pts': 'points'
-}
+df['comment_body'] = df['comment_body'].apply(lambda x: clean_comment(stopwords, contr_dict, slang_dict,
+                                                                      nickname_dict, x))
 
-df['comment_body'] = df['comment_body'].apply(lambda x: clean_comment(stopwords, abbr_dict, nickname_dict, x))
-
-# TODO: Standardize words
+# df.to_csv('lakers_game_comments_clean.csv', index=False)
 # TODO: Convert player abbreviations to full name.
+# TODO: Deal with emojis
 # TODO: Add parent comment id to each comment.
 # TODO: Drop all words with 2 chars or less
+
