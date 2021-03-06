@@ -127,9 +127,11 @@ contr_dict1 = {
 
 contr_dict2 = {key.replace("'", "’"): value for key, value in contr_dict1.items()}
 contr_dict3 = {key.replace("'", "‘"): value for key, value in contr_dict1.items()}
+contr_dict4 = {key.replace("'", ""): value for key, value in contr_dict1.items()}
 
 contr_dict = {}
 
 contr_dict.update(contr_dict1)
 contr_dict.update(contr_dict2)
 contr_dict.update(contr_dict3)
+contr_dict.update(contr_dict4)
