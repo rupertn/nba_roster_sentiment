@@ -5,6 +5,8 @@ import string
 from player_dictionaries import nicknames
 from player_dictionaries import first_to_full
 from player_dictionaries import last_to_full
+from player_dictionaries import skip_last
+from player_dictionaries import skip_first
 from slang import slang_dict
 from contractions import contr_dict
 from nltk.corpus import stopwords
@@ -75,19 +77,19 @@ def match_names(name_list, comm):
     return [name for name in name_list if name in comm]
 
 
-def match_players(full, first, last, f_to_full, l_to_full):
+def match_players(full, first, last):
     players = []
 
     for name in full:
         players.append(name)
 
     for name in first:
-        if f_to_full[name] not in full:
-            players.append(f_to_full[name])
+        if name not in skip_first and first_to_full[name] not in full:
+            players.append(first_to_full[name])
 
     for name in last:
-        if l_to_full[name] not in full:
-            players.append(l_to_full[name])
+        if name not in skip_last and last_to_full[name] not in full:
+            players.append(last_to_full[name])
 
     return players
 
@@ -115,18 +117,10 @@ last_names = list(r['last_name'].str.lower().unique())
 c['p_full'] = c['comment_body'].apply(lambda x: match_names(full_names, x))
 c['p_first'] = c['comment_body'].apply(lambda x: match_names(first_names, x))
 c['p_last'] = c['comment_body'].apply(lambda x: match_names(last_names, x))
-c['p_match'] = c.apply(lambda row: match_players(row['p_full'], row['p_first'], row['p_last'], first_to_full,
-                                                 last_to_full), axis=1)
+c['p_match'] = c.apply(lambda row: match_players(row['p_full'], row['p_first'], row['p_last']), axis=1)
 
 
 c_out = c[['post_id', 'comment_id', 'comment_body', 'comment_score', 'p_match']]
-c_out = c_out.explode('p_match')
 c_out = c_out.dropna(subset=['p_match'])
 
-
 c_out.to_csv('data/lakers_game_comments_clean.csv', index=False)
-
-# TODO: Convert player abbreviations to full name.
-# TODO: Deal with emojis
-# TODO: Add parent comment id to each comment.
-# TODO: Drop all words with 2 chars or less
