@@ -38,5 +38,6 @@ slang_dict = {
     'ikr': 'i know right',
     'wtf': 'what the fuck',
     'fr': 'for real',
-    'vs': 'versus'
+    'vs': 'versus',
+    'btw': 'by the way'
 }
