@@ -2,20 +2,6 @@ import praw
 import pandas as pd
 from datetime import datetime
 
-team_subs = ['lakers']
-
-df = pd.read_csv('nba_teams.csv')
-df = df[~df['team_name'].isin(team_subs)]
-nba_teams = df['team_name'].to_list()
-
-reddit = praw.Reddit(
-    client_id="",
-    client_secret="",
-    user_agent="",
-    username="",
-    password=""
-)
-
 
 def get_search_query(opponent):
     return 'title:post game thread {}'.format(opponent)
@@ -66,6 +52,20 @@ def export_data(franchise, posts, comments):
     posts_df.to_csv('{}_game_posts.csv'.format(franchise), index=False)
     comments_df.to_csv('{}_game_comments.csv'.format(franchise), index=False)
 
+
+team_subs = ['lakers']
+
+df = pd.read_csv('nba_teams.csv')
+df = df[~df['team_name'].isin(team_subs)]
+nba_teams = df['team_name'].to_list()
+
+reddit = praw.Reddit(
+    client_id="",
+    client_secret="",
+    user_agent="",
+    username="",
+    password=""
+)
 
 for sub in team_subs:
     team_sub = reddit.subreddit(sub)
