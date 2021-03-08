@@ -22,6 +22,8 @@ df.loc[df['name'] == 'Devontae Cacok\xa0\xa0(TW)', 'name'] = 'Devontae Cacok'
 df.loc[df['name'] == 'Kostas Antetokounmpo\xa0\xa0(TW)', 'name'] = 'Kostas Antetokounmpo'
 df.loc[df['name'] == 'Dennis Schröder', 'name'] = 'Dennis Schroder'
 
+df['name'] = df['name'].str.lower()
+
 df[['first_name', 'last_name']] = df['name'].str.split(expand=True)
 
 df['initials'] = df['name'].apply(lambda x: get_initials(x))
