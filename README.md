@@ -37,7 +37,7 @@ Post-game comments were collected with the help of the useful Python library, PR
 * Matched comment to player if the player's name was mentioned in the comment.
 
 ## Player Sentiment Analysis
-To determine the polarity of each comment (either postitive, neutral, or negative), VADER (Valence Aware Dictionary and sEntiment Reasoner) was used. VADER is a rule-based sentiment analysis tool that works well on social media text such a tweets, but can also be used for reddit comments. In addition, being a rule-based tool eliminates the need to train the model using text samples.\
+To determine the polarity of each comment (either postitive, neutral, or negative), VADER (Valence Aware Dictionary and sEntiment Reasoner) was used. VADER is a rule-based sentiment analysis tool that works well on social media text such a tweets, but can also be used for reddit comments. In addition, being a rule-based tool eliminates the need to train the model using text samples. 
 \
 To maximize the accuracy of the sentiment analyzer, only comments where a single active roster player was mentioned were analyzed. Comments where more than one player was mentioned were discarded as it was common for a user to state contrasting opinions of multiple players in a single comment. For example, a user might write "player 1 was terrible tonight, but player 2 had a great game!". Since this comment would be assigned a single polarity score, it would fail to capture the sentiment towards each player independently. By only looking at comments where a single player was mentioned we avoid this problem and the accuracy of sentiment results becomes primarily dependent on accuracy of VADER's rule-based model.
 
@@ -46,7 +46,11 @@ To maximize the accuracy of the sentiment analyzer, only comments where a single
 The VADER polarity score contains 4 components, a negative, neutral, positive, and compound score. The
 
 ### Correlation with Annual Roster Turnover
-No matter which way the data was sliced, the results showed **weak correlation between player sentiment and annual roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players with only a few comments directed towards them, excluding the 2015-2016 season due to the low comment totals). Therefore, using these results as training data to predict which players from the 2020-2021 Lakers roster would return next season would generate a very inaccurate classification model.
+No matter which way the data was sliced, the results showed **weak correlation between player sentiment and annual roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players and/or seasons based on low comment totals). 
+As a result, using these results as training data to predict which players from the 2020-2021 Lakers roster would return next season would generate a very inaccurate classification model.
+### Discussion
+Several explanations come to mind as to why a weak correlation was observed. One being lofty fan expectations for certain players. For example, say an all-star calibre player had the best season of his career in 2018-2019, which they subsequently followed up in 2019-2020 with a strong, but slightly worse season statiscally. Despite still being a great player, who is likely to keep his roster spot for the next season, fan sentiment towards them may trend in the negative direction in 2019-2020 as their 2018-2019 season set unrealistic expectations for the player by the fanbase. In the same sense, a weaker player may have one season that is an outlier in which they performed well from the perspective of the fanbase but still failed to secure a roster spot for the following season. This could be because management of the team believes their season was not repeatable and decided to trade the player to another team while their trade value was high. Contract  status may also play a role, as team mangement may have a desire to trade a player who is performing poorly in the eyes of fanbase, but are unable to due a long-term and expensive contract being unattractive to other teams. Similarly, sometimes good players, who are popular among their fanbase, go to another team as they are unable to reach an agreement on a new contract.
 
-## Discussion
+
+## Sources of Error
 
