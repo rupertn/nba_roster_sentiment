@@ -29,12 +29,22 @@ Post-game comments were collected with the help of the useful Python library, PR
 * Removed any non-alphabet letters from player names.
 
 ### Reddit Post-Game Thread Comments
-* Assigned each post-game thread to the correct season.
-* Lowercased comments.
-* Removed numbers, links, punctuation, and extra whitespaces.
-* Expanded abbreviations (slang words, player nicknames etc.)
-* Expanded contractions (don't -> do not, can't -> cannot etc.)
+* Assigned each post-game thread to the correct season based on the post created-on timestamp.
+* Lowercased comments, removed numbers, links, punctuation, and extra whitespaces.
+* Stemmed words (
+* Expanded common abbreviations (slang words, player nicknames etc.)
+* Expanded contractions (didn't -> did not, can't -> cannot etc.)
+* Matched comment to player if the player's name was mentioned in the comment.
 
 ## Sentiment Analysis
+To determine the polarity of each comment (either postitive, neutral, or negative), VADER (Valence Aware Dictionary and sEntiment Reasoner) was used. VADER is a rule-based sentiment analysis tool that works well on social media text such a tweets, but can also be used for reddit comments. In addition, being a rule-based tool eliminates the need to train the model using text samples.\
+\
+To maximize the accuracy of the sentiment analyzer, only comments where a single active roster player was mentioned were analyzed. Comments where more than one player was mentioned were discarded as it was common for a user to state contrasting opinions of multiple players in a single comment. For example, a user might write "player 1 was terrible tonight, but player 2 had a great game!". Since this comment would be assigned a single polarity score, it would fail to capture the sentiment towards each player independently. By only looking at comments where a single player was mentioned we avoid this problem and the accuracy of sentiment results becomes primarily dependent on accuracy of VADER's rule-based model.
+
+### Results
+
+
+
+
 ## Discussion
 
