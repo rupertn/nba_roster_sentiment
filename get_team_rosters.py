@@ -5,7 +5,7 @@ import time
 
 # Input parameters
 nba_seasons = ['2018', '2019', '2020', '2021']
-nba_teams = ['LAL']
+nba_teams = ['LAL']  # 3 char team codes can be found by looking at the url of the team on Basketball Reference.
 
 
 def get_urls(teams, seasons):
