@@ -1,8 +1,17 @@
 import pandas as pd
-from datetime import datetime, date
+from datetime import datetime
 
-game_posts = pd.read_csv('lakers_game_posts.csv')
-df = game_posts.copy()
+
+def get_season(season_dict, post_date):
+    for season, dates in season_dict.items():
+        begin = season_dict[season][0]
+        end = season_dict[season][1]
+
+        if begin <= post_date <= end:
+            return season
+
+
+df = pd.read_csv('data/lakers_game_posts.csv')
 
 df = df[df['title'].str.contains('Post Game')]
 
@@ -20,16 +29,6 @@ season_dates = {
 for key, values in season_dates.items():
     season_dates[key] = [pd.to_datetime(val) for val in values]
 
-
-def get_season(season_dict, post_date):
-    for season, dates in season_dict.items():
-        begin = season_dict[season][0]
-        end = season_dict[season][1]
-
-        if begin <= post_date <= end:
-            return season
-
-
 df['season'] = df['created'].apply(lambda x: get_season(season_dates, x))
 
-# df.to_csv('game_posts_clean.csv', index=False)
+df.to_csv('game_posts_clean.csv', index=False)
