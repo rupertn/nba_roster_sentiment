@@ -37,13 +37,15 @@ Post-game comments were collected with the help of the useful Python library, PR
 * Matched comment to player if the player's name was mentioned in the comment.
 
 ## Player Sentiment Analysis
-To determine the polarity of each comment (either postitive, neutral, or negative), VADER (Valence Aware Dictionary and sEntiment Reasoner) was used. VADER is a rule-based sentiment analysis tool that works well on social media text such a tweets, but can also be used for reddit comments. In addition, being a rule-based tool eliminates the need to train the model using text samples.\
+To determine the polarity of each comment (either postitive, neutral, or negative), VADER (Valence Aware Dictionary and sEntiment Reasoner) was used. VADER is a rule-based sentiment analysis tool that works well on social media text such a tweets, but can also be used for reddit comments. In addition, being a rule-based tool eliminates the need to train the model using text samples.
 
 To maximize the accuracy of the sentiment analyzer, only comments where a single active roster player was mentioned were analyzed. Comments where more than one player was mentioned were discarded as it was common for a user to state contrasting opinions of multiple players in a single comment. For example, a user might write "player 1 was terrible tonight, but player 2 had a great game!". Since this comment would be assigned a single polarity score, it would fail to capture the sentiment towards each player independently. By only looking at comments where a single player was mentioned we avoid this problem and the accuracy of sentiment results becomes primarily dependent on accuracy of VADER's rule-based model.
 
 ### Methodology
-The VADER polarity score contains four components, a negative, neutral, positive, and compound score. The first three represent the probability the comment has negative, neutral, or positive sentiment. The compound score is the sum of these scores, normalized to fall between -1 (extremely negative) and +1 (extremely positive). Evaluation of player sentiment was done by finding the mean compound score grouped by season and player.\
+The VADER polarity score contains four components, a negative, neutral, positive, and compound score. The first three represent the probability the comment has negative, neutral, or positive sentiment. The compound score is the sum of these scores, normalized to fall between -1 (extremely negative) and +1 (extremely positive). 
 
+**Evaluation of player sentiment was done by finding the mean compound score grouped by season and player.** Shown below are the results for the 2019-2020 season.
+<Insert Image>
 
 ### Correlation with Annual Roster Turnover
 No matter which way the data was sliced, the results showed **weak correlation between player sentiment and roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players and/or seasons based on low comment totals). 
