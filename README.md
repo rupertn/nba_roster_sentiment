@@ -52,7 +52,7 @@ The player sentiment values above seem to pass the eye test. Danny Green was cri
 
 ### Correlation with Annual Roster Turnover
 No matter which way the data was sliced, the results showed **weak correlation between player sentiment and roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players and/or seasons based on low comment totals). 
-As a result, using these results as training data to predict which players from the 2020-2021 Lakers roster would return next season would generate a very inaccurate classification model.
+As a result, using these results as training data to predict which players from the 2020-2021 Lakers roster would return next season would produce an inaccurate classification model.
 
 ### Discussion
 Several explanations come to mind as to why a weak correlation was observed. 
