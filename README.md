@@ -32,7 +32,7 @@ Post-game comments were collected with the help of the useful Python library, PR
 * Assigned each post-game thread to the correct season based on the post created-on timestamp.
 * Lowercased comments, removed numbers, links, punctuation, and extra whitespaces.
 * Expanded common abbreviations (slang words, player nicknames etc.)
-* Word lemmatization (thats -> that, traded -> trade etc.)
+* Word lemmatization (thats -> that, shots -> shot etc.)
 * Expanded contractions (didn't -> did not, can't -> cannot etc.)
 * Matched comment to player if the player's name was mentioned in the comment.
 
@@ -45,7 +45,8 @@ To maximize the accuracy of the sentiment analyzer, only comments where a single
 The VADER polarity score contains four components, a negative, neutral, positive, and compound score. The first three represent the probability the comment has negative, neutral, or positive sentiment. The compound score is the sum of these scores, normalized to fall between -1 (extremely negative) and +1 (extremely positive). 
 
 **Evaluation of player sentiment was done by finding the mean compound score grouped by season and player.** Shown below are the results for the 2019-2020 season.
-<Insert Image>
+
+![title](19_20_lakers_sentiment.png)
 
 ### Correlation with Annual Roster Turnover
 No matter which way the data was sliced, the results showed **weak correlation between player sentiment and roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players and/or seasons based on low comment totals). 
