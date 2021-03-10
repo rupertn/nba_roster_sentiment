@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 import string
+import nltk
 from player_dictionaries import nicknames
 from player_dictionaries import first_to_full
 from player_dictionaries import last_to_full
@@ -10,6 +11,7 @@ from player_dictionaries import skip_first
 from slang import slang_dict
 from contractions import contr_dict
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
 
 def make_lowercase(comm):
@@ -58,6 +60,10 @@ def remove_abbreviations(abb_dict, name_dict, comm):
     return comm
 
 
+def lemmatize(comm):
+    return ' '.join([lemmatizer.lemmatize(word) for word in nltk.word_tokenize(comm)])
+
+
 def clean_comment(stop_words, cont_dict, abb_dict, name_dict, comm):
     """Calls various functions required to clean the comment."""
 
@@ -68,6 +74,7 @@ def clean_comment(stop_words, cont_dict, abb_dict, name_dict, comm):
     comm = remove_punctuation(comm)
     comm = remove_whitespace(comm)
     comm = remove_abbreviations(abb_dict, name_dict, comm)
+    comm = lemmatize(comm)
     comm = remove_stopwords(stop_words, comm)
 
     return comm
@@ -103,6 +110,7 @@ c['comment_body'] = c['comment_body'].str.split('\n')
 c = c.explode('comment_body')
 
 stopwords = stopwords.words('english')
+lemmatizer = WordNetLemmatizer()
 
 c['comment_body'] = c['comment_body'].apply(lambda x: clean_comment(stopwords, contr_dict, slang_dict,
                                                                     nicknames, x))
