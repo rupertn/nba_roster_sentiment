@@ -21,7 +21,7 @@ del nicknames['js']
 # TODO: fix ennis and dennis problem
 
 first_to_full = dict(zip(df.first_name, df.name))
-skip_first = ['talen', 'jordan']
+skip_first = ['talen', 'jordan', 'troy']
 
 last_to_full = dict(zip(df.last_name, df.name))
-skip_last = ['bryant', 'cook', 'wear', 'ball', 'hart']
+skip_last = ['bryant', 'cook', 'wear', 'ball', 'hart', 'ennis']
