@@ -14,14 +14,14 @@ Roster information by season was collected from [Basketball Reference](https://w
 ### Reddit Post-Game Thread Comments
 Post-game comments were collected with the help of the useful Python library, PRAW, a wrapper for the Reddit API. Unfortunately the Reddit API has a response limit of 100 posts per request, and with no method of searching posts by timestamp, keeping under this limit required using a Reddit search query with the format 'title: Post Game Thread {game opponent}' to identify post-game threads. Consequently, post-game threads with titles that did not match the keyword search were not retrieved. However, as shown below, this method managed to acquire at least 85% of all post-game threads for each of the past 5 completed NBA seasons.
 
-| NBA Season  | Posts Collected (% Total Games)| Total Comments |
-| ------------- | ------------- | ------------- |
-| 2015 - 2016  | 70 (85%) | 4,670 |
-| 2016 - 2017  | 72 (88%) | 10,156 |
-| 2017 - 2018  | 72 (88%) | 19,120 |
-| 2018 - 2019  | 81 (99%) | 29,198 |
-| 2019 - 2020  | 89 (97%) | 35,951 |
-| 2020 - 2021  | 33 (season in progress) | 10,362 |
+| NBA Season   | Posts Collected (% Total Games)| Total Comments |
+| -----------  | ------------------------------ | -------------- |
+| 2015 - 2016  | 70 (85%)                       | 4,670          |
+| 2016 - 2017  | 72 (88%)                       | 10,156         |
+| 2017 - 2018  | 72 (88%)                       | 19,120         |
+| 2018 - 2019  | 81 (99%)                       | 29,198         |
+| 2019 - 2020  | 89 (97%)                       | 35,951         |
+| 2020 - 2021  | 33 (season in progress)        | 10,362         |
 
 ## Data Cleaning
 ### Roster Information
