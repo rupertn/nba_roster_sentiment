@@ -1,5 +1,5 @@
 # Can NBA Player Sentiment Be a Predictor for Roster Turnover?
-Over the course of a season, NBA fanbases will formulate opinions of their team's players based on their in-game performance. However, through team roster decisions, it can often feel as though these opinions aren't shared with the management personnal of the team. This raises the question, how closely aligned, if at all, are fanbases opinions of their players with management's annual roster movements? Do players who performed poorly in the eyes of the fanbase tend to fail to secure a roster spot for the following season? Similarly, do players who were viewed favourably by the fanbase typically return to the team? Lastly, using the fanbases opinions, can we predict which players from the 2020-2021 roster will be back next season?
+Over the course of a season, NBA fanbases will formulate opinions of their team's players based on their in-game performance. However, through team roster decisions, it can often feel as though these opinions aren't shared with the management personnal of the team. This raises the question, how closely aligned, if at all, are fanbases opinions of their players with management's annual roster movements? Do players who performed poorly in the eyes of the fanbase tend to fail to secure a roster spot for the following season? Similarly, do players who were viewed favourably by the fanbase typically return to the team the next season? Lastly, using the fanbase's opinions, can we predict which players from the 2020-2021 roster will be back for the 2021-2022 season?
 
 To try to answer these questions I collected more than 110,000 Reddit comments from the Los Angeles Lakers subreddit, /r/lakers, and performed a sentiment analysis to gauge the fanbase's opinion of their players. Comments were gathered from approximately 420 post-game threads spanning 6 seasons. As suggested by the name, a post-game thread is a comment thread posted after the game that allows for the expression of thoughts towards the teams or individual players performance. 
 
@@ -48,6 +48,8 @@ The VADER polarity score contains four components, a negative, neutral, positive
 
 ![title](19_20_lakers_sentiment.png)
 
+The player sentiment values above seem to pass the eye test. Danny Green was critisized by the Laker's fanbase for some of his playoff performances and was subsequently traded after the season concluded. On the other hand, Dwight Howard performed well, posting career high three point and field goal shooting percentages.
+
 ### Correlation with Annual Roster Turnover
 No matter which way the data was sliced, the results showed **weak correlation between player sentiment and roster turnover, with the pearson correlation coefficient typically falling around 0.08 - 0.12** depending on how the data was filtered (ie. excluding players and/or seasons based on low comment totals). 
 As a result, using these results as training data to predict which players from the 2020-2021 Lakers roster would return next season would generate a very inaccurate classification model.
@@ -57,7 +59,7 @@ Several explanations come to mind as to why a weak correlation was observed.
 
 1. Fan Expecations
 
-Say an all-star calibre player had the best season of his career in 2018-2019, which they subsequently followed up in 2019-2020 with a strong, but slightly worse season statiscally. Despite still being a great player, who is likely to keep his roster spot for the next season, fan sentiment towards them may trend in the negative direction in 2019-2020 as their 2018-2019 season set unrealistic expectations for the player by the fanbase. In the same sense, a weaker player may have one season that is an outlier in which they performed well from the perspective of the fanbase but still failed to secure a roster spot for the following season. This could be because management of the team believes their season was not repeatable and decided to trade the player to another team while their trade value was high.
+Say an all-star calibre player had the best season of his career in 2018-2019, which they subsequently followed up in 2019-2020 with a strong, but slightly worse season statiscally. Despite still being a great player, who is likely to keep their roster spot for the next season, fan sentiment towards them may trend in the negative direction in 2019-2020 as their 2018-2019 season set unrealistic expectations for the player by the fanbase. In the same sense, a weaker player may have one season that is an outlier in which they performed well from the perspective of the fanbase but still failed to secure a roster spot for the following season. This could be because management of the team believes their season was not repeatable and decided to trade the player to another team while their trade value was high.
 
 2. Contract Status
 
