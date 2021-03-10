@@ -9,7 +9,7 @@ To try to answer these questions I collected more than 110,000 Reddit comments f
 
 ## Data Collection
 ### Los Angeles Lakers Rosters
-Roster information by season was collected from [Basketball Reference](https://www.basketball-reference.com) using a simple Python web scraper. The script, [get_team_rosters.py](https://github.com/rupertn/nba_roster_turnover/blob/main/get_team_rosters.py), downloads a single csv file and can be easily modified by adjusting the input parameters to collect roster information from any team or season available on the website. 
+Roster information by season was collected from [Basketball Reference](https://www.basketball-reference.com) using a simple Python web scraper. The script, [get_team_rosters.py](https://github.com/rupertn/nba_roster_turnover/blob/main/scripts/get_team_rosters.py), downloads a single csv file and can be easily modified by adjusting the input parameters to collect roster information from any team or season available on the website. 
 
 ### Reddit Post-Game Thread Comments
 Post-game comments were collected with the help of the useful Python library, PRAW, a wrapper for the Reddit API. Unfortunately the Reddit API has a response limit of 100 posts per request, and with no method of searching posts by timestamp, keeping under this limit required using a Reddit search query with the format 'title: Post Game Thread {game opponent}' to identify post-game threads. Consequently, post-game threads with titles that did not match the keyword search were not retrieved. However, as shown below, this method managed to acquire at least 85% of all post-game threads for each of the past 5 completed NBA seasons.
