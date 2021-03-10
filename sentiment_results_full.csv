@@ -1,4 +1,4 @@
-season,name,count,comm_sentiment,returned
+season,name,num_comments,comm_sentiment,returned
 2018,lonzo ball,1314.0,0.10571811263318118,1.0
 2018,vander blue,12.0,0.17585000000000003,0.0
 2018,andrew bogut,67.0,0.026077611940298513,0.0
