@@ -46,7 +46,7 @@ The VADER polarity score contains four components, a negative, neutral, positive
 
 **Evaluation of player sentiment was done by finding the mean compound score grouped by season and player.** Shown below are the results for the 2019-2020 season.
 
-![title](19_20_lakers_sentiment.png)
+![lakers_sentiment](19_20_lakers_sentiment.png)
 
 The player sentiment values above seem to pass the eye test. Danny Green was critisized by the Laker's fanbase for some of his playoff performances and was subsequently traded after the season concluded. On the other hand, Dwight Howard performed well, posting career high three point and field goal shooting percentages.
 
